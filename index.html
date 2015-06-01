@@ -32,14 +32,14 @@
     <input class="form-control" placeholder="Search Your Friends' Name" ng-model="friendSearch.name">
     <input class="form-control" placeholder="Search Your Friends' Location" ng-model="friendSearch.current_location">
 
-    <select class="input-medium">
-        <option>Name</option>
-        <option># friends</option>
-        <option>City</option>
-        <option>State</option>
-        <option>Country</option>
+    <select class="input-medium" ng-model="searchQuery">
+        <option value="name">Name</option>
+        <option value="friend_count"># friends</option>
+        <option value="current_location.city">City</option>
+        <option value="current_location.state">State</option>
+        <option value="current_location.country">Country</option>
     </select>
-    <select class="input-medium">
+    <select class="input-medium" ng-model="type">
         <option value="false">Descending</option>
         <option value="true">Ascending</option>
     </select>
@@ -47,7 +47,7 @@
 </form>
 
   <ul>
-    <li class='friend' ng-repeat="friend in friends | filter:friendSearch">
+    <li class='friend' ng-repeat="friend in friends | filter:friendSearch | orderBy: searchQuery:type">
        <img class="profile-pic" ng-src='{{friend.pic_square}}'>
       <h3>{{friend.name}}</h3>
       <div class="location">

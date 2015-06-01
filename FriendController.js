@@ -5,7 +5,7 @@ app.controller('FriendController', ['$scope', function ($scope) {
 
 
 
-
+	console.log($scope.searchQuery);
 
 
 

@@ -29,8 +29,8 @@
   <!-- <input class="form-control" placeholder="Search Anything About Your Friends" ng-model="friendSearch"> -->
   <!-- The stuff below is For step 5....get rid of the one above if you wish-->
    
-    <input class="form-control" placeholder="Search Your Friends' Name" ng-model="friendSearch">
-    <input class="form-control" placeholder="Search Your Freinds' Location" > 
+    <input class="form-control" placeholder="Search Your Friends' Name" ng-model="friendSearch.name">
+    <input class="form-control" placeholder="Search Your Friends' Location" ng-model="friendSearch.current_location">
 
     <select class="input-medium">
         <option>Name</option>
@@ -55,7 +55,8 @@
       </div>      
       <div class="status">
 
-        Status: {{friend.status.message}}<!-- <span class="hashtag">#ihateprovo</span> -->
+        Status: {{friend.status.message}}
+        <!-- <span class="hashtag">#ihateprovo</span> -->
       </div>      
       <div class="num-friends">
         Friends: {{friend.friend_count}}
